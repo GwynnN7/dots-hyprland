@@ -1,5 +1,5 @@
 <div align="center">
-    <h1>【 end_4's Hyprland dotfiles 】</h1>
+    <h1>【 end_4's Hyprland dotfiles ~ gwynn7 fork 】</h1>
     <h3></h3>
 </div>
 
@@ -26,17 +26,10 @@
   - **Transparent installation**: Every command is shown before it's run
 </details>
 <details> 
-  <summary>Installation (illogical-impulse Quickshell)</summary>
+  <summary>Installation</summary>
 
-   - Just run `bash <(curl -s https://ii.clsty.link/get)`
-     - Or, clone this repo and run `./setup install`
+   - Clone this repo and run `./setup install`
      - See [document](https://ii.clsty.link/en/ii-qs/01setup/) for details.
-   - **Default keybinds**: Should be somewhat familiar to Windows or GNOME users. Important ones:
-     - `Super`+`/` = keybind list
-     - `Super`+`Enter` = terminal
-     - If for whatever reason the keybind list widget does not work, here's an image:
-     <img width="1412" height="828" alt="image" src="https://github.com/user-attachments/assets/8f7bd216-9e03-47e3-8709-0008772a4133" />
-
 
 </details>
 
@@ -50,5 +43,4 @@
   | [Quickshell](https://quickshell.outfoxxed.me/) | A QtQuick-based widget system, used for the status bar, sidebars, etc. |
 
   - For the full list of dependencies, see the [sdata/dist-arch folder](https://github.com/end-4/dots-hyprland/tree/main/sdata/dist-arch)
-  - THERE IS NO WAYBAR STOP FUCKING CALLING EVERY BAR WAYBAR
 </details>
