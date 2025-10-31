@@ -63,10 +63,9 @@ RowLayout {
     }
     ToolbarTextField { // Search box
         id: searchInput
-        Layout.topMargin: 4
-        Layout.bottomMargin: 4
-        implicitHeight: 40
+        Layout.alignment: Qt.AlignVCenter
         focus: GlobalStates.overviewOpen
+        padding: 15
         font.pixelSize: Appearance.font.pixelSize.small
         placeholderText: Translation.tr("Search, calculate or run")
         implicitWidth: root.searchingText == "" ? Appearance.sizes.searchWidthCollapsed : Appearance.sizes.searchWidth
@@ -91,6 +90,12 @@ RowLayout {
                     firstItem.clicked();
                 }
             }
+        }
+
+        cursorDelegate: Rectangle {
+            width: 1
+            color: searchInput.activeFocus ? Appearance.colors.colPrimary : "transparent"
+            radius: 1
         }
     }
 
