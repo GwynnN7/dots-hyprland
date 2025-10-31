@@ -6,6 +6,10 @@ function fish_prompt -d "Write out the prompt"
         (set_color $fish_color_cwd) (prompt_pwd) (set_color normal)
 end
 
+function fish_greeting
+    fastfetch
+end
+
 if status is-interactive # Commands to run in interactive sessions can go here
 
     # No greeting
@@ -21,6 +25,6 @@ if status is-interactive # Commands to run in interactive sessions can go here
     alias pamcan pacman
     alias ls 'eza --icons'
     alias clear "printf '\033[2J\033[3J\033[1;1H'"
-    alias q 'qs -c ii'
+    alias qshell 'qs -c ii'
     
 end
