@@ -1,0 +1,246 @@
+{
+  "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/master/doc/json_schema.json",
+  "logo": {
+    "type": "auto",
+    "source": "~/.config/fastfetch/cortana.jpg",
+    "color": {
+      "1": "",
+      "2": "",
+      "3": "",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": ""
+    },
+    "width": 30,
+    "height": null,
+    "padding": {
+      "top": 2,
+      "left": 2,
+      "right": 5
+    },
+    "printRemaining": true,
+    "preserveAspectRatio": true,
+    "recache": false,
+    "position": "left",
+    "chafa": {
+      "fgOnly": false,
+      "symbols": "block+border+space-wide-inverted"
+    }
+  },
+  "display": {
+    "stat": false,
+    "pipe": false,
+    "showErrors": false,
+    "disableLinewrap": true,
+    "hideCursor": false,
+    "separator": " • ",
+    "color": {
+      "keys": "",
+      "title": "",
+      "output": "",
+      "separator": ""
+    },
+    "brightColor": true,
+    "duration": {
+      "abbreviation": true,
+      "spaceBeforeUnit": "default"
+    },
+    "size": {
+      "maxPrefix": "YB",
+      "binaryPrefix": "iec",
+      "ndigits": 2,
+      "spaceBeforeUnit": "default"
+    },
+    "temp": {
+      "unit": "D",
+      "ndigits": 1,
+      "color": {
+        "green": "32",
+        "yellow": "93",
+        "red": "91"
+      },
+      "spaceBeforeUnit": "default"
+    },
+    "percent": {
+      "type": [
+        "num",
+        "num-color"
+      ],
+      "ndigits": 0,
+      "color": {
+        "green": "32",
+        "yellow": "93",
+        "red": "91"
+      },
+      "spaceBeforeUnit": "default",
+      "width": 0
+    },
+    "bar": {
+      "char": {
+        "elapsed": "■",
+        "total": "-"
+      },
+      "border": {
+        "left": "[ ",
+        "right": " ]",
+        "leftElapsed": "",
+        "rightElapsed": ""
+      },
+      "color": {
+        "elapsed": "auto",
+        "total": "97",
+        "border": "97"
+      },
+      "width": 10
+    },
+    "fraction": {
+      "ndigits": 2
+    },
+    "noBuffer": false,
+    "key": {
+      "width": 0,
+      "type": "both",
+      "paddingLeft": 0
+    },
+    "freq": {
+      "ndigits": 2,
+      "spaceBeforeUnit": "default"
+    },
+    "constants": []
+  },
+  "general": {
+    "thread": true,
+    "processingTimeout": 5000,
+    "detectVersion": false,
+    "playerName": "spotify",
+    "dsForceDrm": false
+  },
+  "modules": [
+    {
+      "type": "title",
+      "key": " ",
+      "keyIcon": "",
+      "fqdn": false,
+      "color": {
+        "user": "",
+        "at": "",
+        "host": ""
+      }
+    },
+    {
+      "type": "separator",
+      "string": "-",
+      "outputColor": "",
+      "times": 0
+    },
+    {
+      "type": "os",
+      "keyIcon": "",
+      "format": "{name}"
+    },
+    {
+      "type": "uptime",
+      "keyIcon": "",
+      "format": "{hours} hours, {minutes} minutes"
+    },
+    {
+      "type": "packages",
+      "keyIcon": "󰏖",
+      "disabled": [
+        "apk"
+      ],
+      "combined": true,
+      "format": "{all}"
+    },
+    "break",
+    {
+      "type": "de",
+      "keyIcon": "",
+      "slowVersionDetection": false
+    },
+    {
+      "type": "wm",
+      "key": "Desktop",
+      "keyIcon": "",
+      "detectPlugin": false,
+      "format": "{pretty-name}"
+    },
+    {
+      "type": "terminal",
+      "keyIcon": "",
+      "format": "{pretty-name}"
+    },
+    {
+      "type": "shell",
+      "keyIcon": "",
+      "format": "{pretty-name}"
+    },
+    "break",
+    {
+      "type": "cpu",
+      "keyIcon": "",
+      "temp": true,
+      "showPeCoreCount": false,
+      "format": "{name} ~ {temperature}"
+    },
+    {
+      "type": "gpu",
+      "keyIcon": "󰾲",
+      "driverSpecific": false,
+      "detectionMethod": "pci",
+      "temp": true,
+      "hideType": "none",
+      "percent": {
+        "green": 50,
+        "yellow": 80,
+        "type": 0
+      },
+      "format": "{name} ~ {temperature}"
+    },
+    {
+      "type": "memory",
+      "key": "RAM",
+      "keyIcon": "",
+      "percent": {
+        "green": 50,
+        "yellow": 80,
+        "type": 0
+      },
+      "format": "{used} / {total} ~ {percentage}"
+    },
+    "break",
+    {
+      "type": "localip",
+      "key": "Addr",
+      "keyIcon": "󰩟",
+      "showIpv4": true,
+      "showIpv6": false,
+      "showMac": false,
+      "showLoop": false,
+      "showPrefixLen": false,
+      "showMtu": false,
+      "showSpeed": false,
+      "showFlags": false,
+      "compact": true,
+      "defaultRouteOnly": true,
+      "showAllIps": false,
+      "namePrefix": ""
+    },
+    {
+      "type": "media",
+      "key": "Song",
+      "format": "{title} ~ {artist}"
+    },
+    {
+      "type": "command",
+      "text": "cortana || echo 'Cortana Offline'",
+      "key": "Home",
+      "keyIcon": "",
+      "format": ""
+    },
+    "break"
+  ]
+}
