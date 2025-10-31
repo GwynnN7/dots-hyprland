@@ -148,65 +148,18 @@ Scope {
                     columns: 4
                     columnSpacing: 15
                     rowSpacing: 15
-
-                    SessionActionButton {
-                        id: sessionLock
-                        focus: sessionRoot.visible
-                        buttonIcon: "lock"
-                        buttonText: Translation.tr("Lock")
-                        onClicked:  { Session.lock(); sessionRoot.hide() }
-                        onFocusChanged: { if (focus) sessionRoot.subtitle = buttonText }
-                        KeyNavigation.right: sessionSleep
-                        KeyNavigation.down: sessionHibernate
-                    }
-                    SessionActionButton {
-                        id: sessionSleep
-                        buttonIcon: "dark_mode"
-                        buttonText: Translation.tr("Sleep")
-                        onClicked:  { Session.suspend(); sessionRoot.hide() }
-                        onFocusChanged: { if (focus) sessionRoot.subtitle = buttonText }
-                        KeyNavigation.left: sessionLock
-                        KeyNavigation.right: sessionLogout
-                        KeyNavigation.down: sessionShutdown
-                    }
-                    SessionActionButton {
-                        id: sessionLogout
-                        buttonIcon: "logout"
-                        buttonText: Translation.tr("Logout")
-                        onClicked: { Session.logout(); sessionRoot.hide() }
-                        onFocusChanged: { if (focus) sessionRoot.subtitle = buttonText }
-                        KeyNavigation.left: sessionSleep
-                        KeyNavigation.right: sessionTaskManager
-                        KeyNavigation.down: sessionReboot
-                    }
-                    SessionActionButton {
-                        id: sessionTaskManager
-                        buttonIcon: "browse_activity"
-                        buttonText: Translation.tr("Task Manager")
-                        onClicked:  { Session.launchTaskManager(); sessionRoot.hide() }
-                        onFocusChanged: { if (focus) sessionRoot.subtitle = buttonText }
-                        KeyNavigation.left: sessionLogout
-                        KeyNavigation.down: sessionFirmwareReboot
-                    }
-
-                    SessionActionButton {
-                        id: sessionHibernate
-                        buttonIcon: "downloading"
-                        buttonText: Translation.tr("Hibernate")
-                        onClicked:  { Session.hibernate(); sessionRoot.hide() }
-                        onFocusChanged: { if (focus) sessionRoot.subtitle = buttonText }
-                        KeyNavigation.up: sessionLock
-                        KeyNavigation.right: sessionShutdown
-                    }
+                    
                     SessionActionButton {
                         id: sessionShutdown
+                        focus: sessionRoot.visible
                         buttonIcon: "power_settings_new"
                         buttonText: Translation.tr("Shutdown")
                         onClicked:  { Session.poweroff(); sessionRoot.hide() }
                         onFocusChanged: { if (focus) sessionRoot.subtitle = buttonText }
-                        KeyNavigation.left: sessionHibernate
+                        KeyNavigation.left: sessionTaskManager
                         KeyNavigation.right: sessionReboot
-                        KeyNavigation.up: sessionSleep
+                        KeyNavigation.down: sessionWindows
+                        KeyNavigation.up: sessionWindows
                     }
                     SessionActionButton {
                         id: sessionReboot
@@ -215,8 +168,64 @@ Scope {
                         onClicked:  { Session.reboot(); sessionRoot.hide() }
                         onFocusChanged: { if (focus) sessionRoot.subtitle = buttonText }
                         KeyNavigation.left: sessionShutdown
-                        KeyNavigation.right: sessionFirmwareReboot
+                        KeyNavigation.right: sessionSleep
+                        KeyNavigation.down: sessionLogout
                         KeyNavigation.up: sessionLogout
+                    }
+                    SessionActionButton {
+                        id: sessionSleep
+                        buttonIcon: "dark_mode"
+                        buttonText: Translation.tr("Sleep")
+                        onClicked:  { Session.suspend(); sessionRoot.hide() }
+                        onFocusChanged: { if (focus) sessionRoot.subtitle = buttonText }
+                        KeyNavigation.left: sessionReboot
+                        KeyNavigation.right: sessionTaskManager
+                        KeyNavigation.down: sessionHibernate
+                        KeyNavigation.up: sessionHibernate
+                    }
+                    SessionActionButton {
+                        id: sessionTaskManager
+                        buttonIcon: "browse_activity"
+                        buttonText: Translation.tr("Task Manager")
+                        onClicked:  { Session.launchTaskManager(); sessionRoot.hide() }
+                        onFocusChanged: { if (focus) sessionRoot.subtitle = buttonText }
+                        KeyNavigation.left: sessionSleep
+                        KeyNavigation.down: sessionFirmwareReboot
+                        KeyNavigation.up: sessionFirmwareReboot
+                        KeyNavigation.right: sessionShutdown
+                    }
+                    SessionActionButton {
+                        id: sessionWindows
+                        buttonIcon: "lock"
+                        buttonText: Translation.tr("Reboot to Windows")
+                        onClicked:  { Session.rebootToWindows(); sessionRoot.hide() }
+                        onFocusChanged: { if (focus) sessionRoot.subtitle = buttonText }
+                        KeyNavigation.right: sessionLogout
+                        KeyNavigation.left: sessionFirmwareReboot
+                        KeyNavigation.up: sessionShutdown
+                        KeyNavigation.down: sessionShutdown
+                    }
+                    SessionActionButton {
+                        id: sessionLogout
+                        buttonIcon: "logout"
+                        buttonText: Translation.tr("Logout")
+                        onClicked: { Session.logout(); sessionRoot.hide() }
+                        onFocusChanged: { if (focus) sessionRoot.subtitle = buttonText }
+                        KeyNavigation.left: sessionWindows
+                        KeyNavigation.right: sessionHibernate
+                        KeyNavigation.up: sessionReboot
+                        KeyNavigation.down: sessionReboot
+                    }
+                    SessionActionButton {
+                        id: sessionHibernate
+                        buttonIcon: "downloading"
+                        buttonText: Translation.tr("Hibernate")
+                        onClicked:  { Session.hibernate(); sessionRoot.hide() }
+                        onFocusChanged: { if (focus) sessionRoot.subtitle = buttonText }
+                        KeyNavigation.up: sessionSleep
+                        KeyNavigation.down: sessionSleep
+                        KeyNavigation.left: sessionLogout
+                        KeyNavigation.right: sessionFirmwareReboot
                     }
                     SessionActionButton {
                         id: sessionFirmwareReboot
@@ -225,7 +234,9 @@ Scope {
                         onClicked:  { Session.rebootToFirmware(); sessionRoot.hide() }
                         onFocusChanged: { if (focus) sessionRoot.subtitle = buttonText }
                         KeyNavigation.up: sessionTaskManager
-                        KeyNavigation.left: sessionReboot
+                        KeyNavigation.down: sessionTaskManager
+                        KeyNavigation.left: sessionHibernate
+                        KeyNavigation.right: sessionWindows
                     }
                 }
 
