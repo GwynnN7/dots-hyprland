@@ -1,0 +1,10 @@
+telegram-desktop
+spotify-launcher
+spicetify-cli
+vesktop
+easyeffects
+google-chrome
+steam
+jetbrains-toolbox
+gnome-text-editor
+code
