@@ -13,6 +13,9 @@ depends=(
   fish
   fontconfig
   kitty
+  fastfetch
+	yazi
+  fcitx5
   matugen-bin
   otf-space-grotesk
   starship

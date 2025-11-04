@@ -9,4 +9,7 @@ depends=(
 	networkmanager
 	nm-connection-editor
 	gnome-keyring
+	power-profiles-daemon
+	pacseek
+	btop
 )

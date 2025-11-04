@@ -62,6 +62,9 @@ patterns:
   - from: "dots/.local/share/icons"
     to: "$XDG_DATA_HOME/icons"
     mode: "soft"
+  - from: "dots/.local/bin"
+    to: "$XDG_BIN_HOME"
+    mode: "sync"
   # Fontconfig (default - fontsets handled separately if FONTSET_DIR_NAME is set)
   - from: "dots/.config/fontconfig"
     to: "$XDG_CONFIG_HOME/fontconfig"

@@ -6,5 +6,5 @@ easyeffects
 google-chrome
 steam
 jetbrains-toolbox
-gnome-text-editor
+sddm-conf
 code

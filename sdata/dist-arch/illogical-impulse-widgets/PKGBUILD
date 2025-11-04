@@ -7,6 +7,8 @@ license=(None)
 depends=(
   fuzzel
   glib2
+  meson
+  cpio
   imagemagick
   hypridle
   hyprlock
