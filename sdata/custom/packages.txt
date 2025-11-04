@@ -1,3 +1,4 @@
+sddm
 neovim
 btop
 dotnet-sdk
