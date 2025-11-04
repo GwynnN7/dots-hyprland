@@ -5,6 +5,5 @@ rm -rf ~/.config/nvim/.git
 mkdir ~/Programming
 git clone https://github.com/GwynnN7/Cortana ~/Programming
 
-libinput-gestures-setup autostart start
-headsetcontrol -s 0
-fc-cache -fv
+#headsetcontrol -s 0
+fc-cache -f
