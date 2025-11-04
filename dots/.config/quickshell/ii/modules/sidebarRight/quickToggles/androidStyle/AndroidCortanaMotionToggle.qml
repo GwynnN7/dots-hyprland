@@ -13,7 +13,7 @@ AndroidQuickToggleButton {
     toggled: toggled
     buttonIcon: "eye_tracking"
 
-    onClicked: {
+    mainAction: () => {
         root.toggled = !root.toggled
         if (root.toggled) {
             Quickshell.execDetached(["fish", "-c", `cortana -val 1 "settings motiondetection"`])

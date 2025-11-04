@@ -13,7 +13,7 @@ AndroidQuickToggleButton {
     toggled: toggled
     buttonIcon: "light"
 
-    onClicked: {
+    mainAction: () => {
         root.toggled = !root.toggled
         if (root.toggled) {
             Quickshell.execDetached(["fish", "-c", `cortana -act on "devices lamp"`])
