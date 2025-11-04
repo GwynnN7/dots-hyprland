@@ -22,6 +22,17 @@ ContentPage {
                 });
             }
         }
+
+        ConfigSwitch {
+            text: Translation.tr("Use Cortana Session")
+            checked: Config.options.search.cortanaSession
+            onCheckedChanged: {
+                Config.options.search.cortanaSession = checked;
+            }
+            StyledToolTip {
+                text: Translation.tr("Use Cortana Session before taking local action")
+            }
+        }
     }
 
     ContentSection {
