@@ -17,6 +17,7 @@ Item {
     property var biggestWindow: HyprlandData.biggestWindowForWorkspace(HyprlandData.monitors[root.monitor?.id]?.activeWorkspace.id)
 
     implicitWidth: colLayout.implicitWidth
+    width: root.width * 0.8
 
     ColumnLayout {
         id: colLayout
