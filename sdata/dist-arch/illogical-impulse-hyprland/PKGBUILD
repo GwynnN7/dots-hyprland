@@ -6,17 +6,11 @@ arch=(any)
 license=(None)
 depends=(
   hypridle
-  hyprcursor
   hyprland
-  hyprland-qtutils
-  hyprland-qt-support
-  hyprlang
   hyprlock
   hyprpicker
   hyprsunset
-  hyprutils
-  hyprpolkitagent
-  hyprwayland-scanner
   xdg-desktop-portal-hyprland
+  hyprpolkitagent
   wl-clipboard
 )
