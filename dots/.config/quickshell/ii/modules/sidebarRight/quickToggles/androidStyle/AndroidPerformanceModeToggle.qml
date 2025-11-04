@@ -13,7 +13,7 @@ AndroidQuickToggleButton {
     toggled: toggled
     buttonIcon: "speed"
 
-    onClicked: {
+    mainAction: () => {
         root.toggled = !root.toggled
         if (root.toggled) {
             Quickshell.execDetached(["bash", "-c", `hyprctl --batch "keyword animations:enabled 0; keyword decoration:shadow:enabled 0; keyword decoration:blur:enabled 0; keyword general:border_size 1"`])

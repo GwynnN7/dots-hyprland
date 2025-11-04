@@ -359,6 +359,7 @@ Singleton {
                 property real scale: 0.2 // Relative to screen size
                 property real rows: 2
                 property real columns: 2
+                property bool centerIcons: true
             }
 
             property JsonObject regionSelector: JsonObject {
