@@ -1,0 +1,11 @@
+pkgname=illogical-impulse-connections
+pkgver=1.0
+pkgrel=2
+pkgdesc='Illogical Impulse Connections'
+arch=(any)
+license=(None)
+depends=(
+	blueman
+	networkmanager
+	gnome-keyring
+)

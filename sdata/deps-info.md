@@ -12,8 +12,8 @@ Meta-packages (from sdata/dist-arch/install-deps.sh)
   - Purpose: Screen brightness control utilities (e.g., brightnessctl).
 - illogical-impulse-fonts-themes
   - Purpose: Fonts and themes used across the shell/widgets (Noto, emoji fonts, icon themes, GTK/Qt themes).
-- illogical-impulse-kde
-  - Purpose: KDE integration bits (dialogs, theming helpers, optional browser integration).
+- illogical-impulse-connections
+  - Purpose: Connections integration bits (dialogs, theming helpers, optional browser integration).
 - illogical-impulse-portal
   - Purpose: Desktop portals (e.g., xdg-desktop-portal and Wayland compositor-specific portals).
 - illogical-impulse-python

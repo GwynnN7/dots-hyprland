@@ -302,6 +302,8 @@ switch() {
     "$SCRIPT_DIR"/applycolor.sh
     deactivate
 
+    python3 "$SCRIPT_DIR/generate_telegram_theme.py"
+    
     # Pass screen width, height, and wallpaper path to post_process
     max_width_desired="$(hyprctl monitors -j | jq '([.[].width] | min)' | xargs)"
     max_height_desired="$(hyprctl monitors -j | jq '([.[].height] | min)' | xargs)"

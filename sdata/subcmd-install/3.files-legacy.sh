@@ -22,7 +22,6 @@ case $SKIP_MISCCONF in
       elif [ -f "dots/.config/$i" ];then warning_rsync_normal; v rsync -av "dots/.config/$i" "$XDG_CONFIG_HOME/$i"
       fi
     done
-    warning_rsync_delete; v rsync -av "dots/.local/share/konsole/" "${XDG_DATA_HOME:-$HOME/.local/share}"/konsole/
     ;;
 esac
 

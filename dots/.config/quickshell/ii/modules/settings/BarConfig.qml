@@ -282,6 +282,15 @@ ContentPage {
             }
         }
 
+        ConfigSwitch {
+            buttonIcon: "autoplay"
+            text: Translation.tr('Reverse order')
+            checked: Config.options.bar.workspaces.reverseOrder
+            onCheckedChanged: {
+                Config.options.bar.workspaces.reverseOrder = checked;
+            }
+        }
+        
         ConfigSpinBox {
             icon: "view_column"
             text: Translation.tr("Workspaces shown")

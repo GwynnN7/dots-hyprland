@@ -15,6 +15,7 @@ depends=(
   hyprpicker
   hyprsunset
   hyprutils
+  hyprpolkitagent
   hyprwayland-scanner
   xdg-desktop-portal-hyprland
   wl-clipboard

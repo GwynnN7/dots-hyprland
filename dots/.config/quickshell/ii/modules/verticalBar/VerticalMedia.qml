@@ -30,13 +30,13 @@ MouseArea {
     acceptedButtons: Qt.MiddleButton | Qt.BackButton | Qt.ForwardButton | Qt.RightButton | Qt.LeftButton
     hoverEnabled: true
     onPressed: (event) => {
-        if (event.button === Qt.MiddleButton) {
+        if (event.button === Qt.LeftButton) {
             activePlayer.togglePlaying();
         } else if (event.button === Qt.BackButton) {
             activePlayer.previous();
-        } else if (event.button === Qt.ForwardButton || event.button === Qt.RightButton) {
+        } else if (event.button === Qt.ForwardButton || event.button === Qt.MiddleButton) {
             activePlayer.next();
-        } else if (event.button === Qt.LeftButton) {
+        } else if (event.button === Qt.RightButton) {
             GlobalStates.mediaControlsOpen = !GlobalStates.mediaControlsOpen
         }
     }

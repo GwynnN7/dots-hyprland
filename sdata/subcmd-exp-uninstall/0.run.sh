@@ -16,10 +16,14 @@ read -r
 printf "${STY_CYAN}Removing copied config and local folders...\n${STY_RST}"
 
 dirs=(
+fastfetch/
+fcitx5/
+telegram/
+yazi/
+wallpapers/
 Kvantum/
 fish/
 fontconfig/
-foot/
 fuzzel/
 hypr/
 kde-material-you-colors/
@@ -29,17 +33,13 @@ mpv/
 qt5ct/
 qt6ct/
 quickshell/
-wlogout/
-xdg-desktop-portal/
-zshrc.d/
 chrome-flags.conf
 code-flags.conf
+spotify-launcher.conf
+vesktop-flags.conf
 darklyrc
-dolphinrc
 kdeglobals
-konsolerc
 starship.toml
-thorium-flags.conf
 )
 
 for i in "${dirs[@]}"
@@ -74,7 +74,7 @@ read -p "Do you want to uninstall the illogical-impulse-* meta packages (Arch Li
 Ctrl+C to exit, or press Enter to proceed" p
 
 # Removing installed yay packages and dependencies
-v yay -Rns illogical-impulse-{audio,backlight,basic,bibata-modern-classic-bin,fonts-themes,hyprland,kde,microtex-git,oneui4-icons-git,portal,python,screencapture,toolkit,widgets} plasma-browser-integration
+v yay -Rns illogical-impulse-{audio,backlight,basic,bibata-modern-classic-bin,fonts-themes,hyprland,connections,microtex-git,oneui4-icons-git,portal,python,screencapture,toolkit,widgets} plasma-browser-integration
 
 printf "${STY_CYAN}Uninstall Complete.\n${STY_RST}"
 printf "${STY_CYAN}Hint: If you had agreed to backup when you ran \"./setup install\", you should be able to find it under \"$BACKUP_DIR\".\n${STY_RST}"

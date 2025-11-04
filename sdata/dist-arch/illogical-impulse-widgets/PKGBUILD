@@ -15,5 +15,4 @@ depends=(
   nm-connection-editor
   songrec
   translate-shell
-  wlogout
 )

@@ -109,7 +109,7 @@ DelegateChooser {
         cellSize: modelData.size
     } }
 
-    DelegateChoice { roleValue: "cloudflareWarp"; AndroidCloudflareWarpToggle {
+    DelegateChoice { roleValue: "performanceMode"; AndroidPerformanceModeToggle {
         required property int index
         required property var modelData
         buttonIndex: root.startingIndex + index
@@ -122,7 +122,7 @@ DelegateChooser {
         cellSize: modelData.size
     } }
 
-    DelegateChoice { roleValue: "gameMode"; AndroidGameModeToggle {
+    DelegateChoice { roleValue: "cortanaLight"; AndroidCortanaLightToggle {
         required property int index
         required property var modelData
         buttonIndex: root.startingIndex + index
@@ -134,6 +134,20 @@ DelegateChooser {
         cellSpacing: root.spacing
         cellSize: modelData.size
     } }
+
+    DelegateChoice { roleValue: "motionDetection"; AndroidCortanaMotionToggle {
+        required property int index
+        required property var modelData
+        buttonIndex: root.startingIndex + index
+        buttonData: modelData
+        editMode: root.editMode
+        expandedSize: modelData.size > 1
+        baseCellWidth: root.baseCellWidth
+        baseCellHeight: root.baseCellHeight
+        cellSpacing: root.spacing
+        cellSize: modelData.size
+    } }
+
 
     DelegateChoice { roleValue: "screenSnip"; AndroidScreenSnipToggle {
         required property int index

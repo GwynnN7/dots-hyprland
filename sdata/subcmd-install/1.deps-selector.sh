@@ -72,20 +72,7 @@ export OS_DISTRO_ID=$(awk -F'=' '/^ID=/ { gsub("\"","",$2); print tolower($2) }'
 export OS_DISTRO_ID_LIKE=$(awk -F'=' '/^ID_LIKE=/ { gsub("\"","",$2); print tolower($2) }' ${OS_RELEASE_FILE} 2> /dev/null)
 
 
-if [[ "$INSTALL_VIA_NIX" == "true" ]]; then
-
-  TARGET_ID=nix
-  printf "${STY_YELLOW}"
-  printf "===WARNING===\n"
-  printf "./sdata/dist-${TARGET_ID}/install-deps.sh will be used.\n"
-  printf "The process is still WIP.\n"
-  printf "Proceed only at your own risk.\n"
-  printf "\n"
-  printf "${STY_RST}"
-  pause
-  source ./sdata/dist-${TARGET_ID}/install-deps.sh
-
-elif [[ "$OS_DISTRO_ID" =~ ^(arch|endeavouros)$ ]]; then
+if [[ "$OS_DISTRO_ID" =~ ^(arch|endeavouros)$ ]]; then
 
   TARGET_ID=arch
   printf "${STY_GREEN}"
@@ -97,81 +84,8 @@ elif [[ "$OS_DISTRO_ID" =~ ^(arch|endeavouros)$ ]]; then
   pause
   source ./sdata/dist-${TARGET_ID}/install-deps.sh
 
-elif [[ -f "./sdata/dist-${OS_DISTRO_ID}/install-deps.sh" ]]; then
-
-  TARGET_ID=${OS_DISTRO_ID}
-  printf "${STY_PURPLE}"
-  printf "===NOTICE===\n"
-  printf "Detected distro ID: ${OS_DISTRO_ID}\n"
-  printf "./sdata/dist-${TARGET_ID}/install-deps.sh will be used.\n"
-  printf "This file is provided by the community.\n"
-  printf "It is not officially supported by github:end-4/dots-hyprland .\n"
-  test -f "./sdata/dist-${TARGET_ID}/README.md" && \
-    printf "Read ${STY_INVERT} ./sdata/dist-${TARGET_ID}/README.md ${STY_RST}${STY_PURPLE} for more information.\n"
-  printf "${STY_BOLD}"
-  printf "If you find out any problems about it, PR is welcomed if you are able to address it. Or, create a discussion about it, but please do not submit issue, because the developers do not use this distro, therefore they cannot help.${STY_RST}\n"
-  printf "${STY_PURPLE}"
-  printf "Proceed only at your own risk.\n"
-  printf "\n"
-  printf "${STY_RST}"
-  pause
-  tmp_update_status="$(outdate_detect sdata/dist-arch sdata/dist-${TARGET_ID})"
-  if [[ "${tmp_update_status}" =~ ^(OUTDATED|EMPTY_TARGET|EMPTY_SOURCE|FORCE_OUTDATED|WIP)$ ]]; then
-    printf "${STY_RED}${STY_BOLD}===URGENT===${STY_RST}\n"
-    printf "${STY_RED}"
-    printf "The community provided ./sdata/dist-${TARGET_ID}/ is outdated (status: ${tmp_update_status}),\n"
-    printf "which means it probably does not reflect all latest changes of ./sdata/dist-arch/ .\n"
-    printf "\n"
-    printf "According to the actual changes, it may still works, but it can also work unexpectedly.\n"
-    printf "It's highly recommended to check the following links before continue:${STY_RST}\n"
-    printf "${STY_UNDERLINE}https://github.com/end-4/dots-hyprland/discussions/2140${STY_RST}\n"
-    printf "${STY_UNDERLINE}https://github.com/end-4/dots-hyprland/commits/main/sdata/dist-arch${STY_RST}\n"
-    printf "${STY_UNDERLINE}https://github.com/end-4/dots-hyprland/commits/main/sdata/dist-${TARGET_ID}${STY_RST}\n"
-    printf "\n"
-    printf "${STY_PURPLE}${STY_INVERT}PR on ./sdata/dist-${TARGET_ID}/ to properly reflect the latest changes of ./sdata/dist-arch is welcomed.${STY_RST}\n"
-    printf "\n"
-    if [ "$ask" = "false" ]; then
-      echo "Urgent problem encountered, aborting...";exit 1
-    fi
-    printf "${STY_RED}Still proceed?${STY_RST}\n"
-    read -p "[y/N]: " p
-    case "$p" in
-      [yY])sleep 0;;
-      *)echo "Aborting...";exit 1;;
-    esac
-  fi
-  source ./sdata/dist-${TARGET_ID}/install-deps.sh
-
-elif [[ "$OS_DISTRO_ID_LIKE" == "arch" || "$OS_DISTRO_ID" == "cachyos" ]]; then
-
-  TARGET_ID=arch
-  printf "${STY_YELLOW}"
-  printf "===WARNING===\n"
-  printf "Detected distro ID: ${OS_DISTRO_ID}\n"
-  printf "Detected distro ID_LIKE: ${OS_DISTRO_ID_LIKE}\n"
-  printf "./sdata/dist-${TARGET_ID}/install-deps.sh will be used.\n"
-  printf "Ideally, it should also work for your distro.\n"
-  printf "Still, there is a chance that it not works as expected or even fails.\n"
-  printf "Proceed only at your own risk.\n"
-  printf "\n"
-  printf "${STY_RST}"
-  pause
-  source ./sdata/dist-${TARGET_ID}/install-deps.sh
-
 else
 
-  TARGET_ID=fallback
-  printf "${STY_RED}${STY_BOLD}===URGENT===${STY_RST}\n"
-  printf "${STY_RED}"
-  printf "Detected distro ID: ${OS_DISTRO_ID}\n"
-  printf "Detected distro ID_LIKE: ${OS_DISTRO_ID_LIKE}\n"
-  printf "./sdata/dist-${OS_DISTRO_ID}/install-deps.sh not found.\n"
-  printf "./sdata/dist-${TARGET_ID}/install-deps.sh will be used.\n"
-  printf "1. It may disrupt your system and will likely fail without your manual intervention.\n"
-  printf "2. It is WIP and only contains small number of dependencies far from enough.\n"
-  printf "Proceed only at your own risk.\n"
-  printf "${STY_RST}"
-  pause
-  source ./sdata/dist-${TARGET_ID}/install-deps.sh
+  printf "Distro not supported, quitting...\n"
 
 fi

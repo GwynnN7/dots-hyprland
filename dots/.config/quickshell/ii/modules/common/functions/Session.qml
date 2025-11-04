@@ -12,14 +12,14 @@ Singleton {
         });
     }
 
-    function lock() {
-        Quickshell.execDetached(["loginctl", "lock-session"]);
+    function rebootToWindows() {
+        closeAllWindows();
+        Quickshell.execDetached(["bash", "-c", "cortana -cmd system computer || reboot || loginctl reboot"]);
     }
 
     function suspend() {
-        Quickshell.execDetached(["bash", "-c", "systemctl suspend || loginctl suspend"]);
+        Quickshell.execDetached(["bash", "-c", "cortana -cmd suspend computer || systemctl suspend || loginctl suspend"]);
     }
-
     function logout() {
         closeAllWindows();
         Quickshell.execDetached(["pkill", "-i", "Hyprland"]);
@@ -35,12 +35,12 @@ Singleton {
 
     function poweroff() {
         closeAllWindows();
-        Quickshell.execDetached(["bash", "-c", `systemctl poweroff || loginctl poweroff`]);
+        Quickshell.execDetached(["bash", "-c", `cortana -cmd shutdown computer || systemctl poweroff || loginctl poweroff`]);
     }
 
     function reboot() {
         closeAllWindows();
-        Quickshell.execDetached(["bash", "-c", `reboot || loginctl reboot`]);
+        Quickshell.execDetached(["bash", "-c", `cortana -cmd reboot computer || reboot || loginctl reboot`]);
     }
 
     function rebootToFirmware() {
