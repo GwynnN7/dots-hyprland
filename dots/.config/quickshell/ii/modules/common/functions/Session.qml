@@ -14,11 +14,11 @@ Singleton {
 
     function rebootToWindows() {
         closeAllWindows();
-        Quickshell.execDetached(["bash", "-c", Config.options.ai.cortanaSession ? "cortana -cmd system computer || reboot || loginctl reboot" : "reboot || loginctl reboot"]);
+        Quickshell.execDetached(["fish", "-c", Config.options.ai.cortanaSession ? "cortana -cmd system computer || reboot || loginctl reboot" : "reboot || loginctl reboot"]);
     }
 
     function suspend() {
-        Quickshell.execDetached(["bash", "-c", Config.options.ai.cortanaSession ? "cortana -cmd suspend computer || systemctl suspend || loginctl suspend" : "systemctl suspend || loginctl suspend"]);
+        Quickshell.execDetached(["fish", "-c", Config.options.ai.cortanaSession ? "cortana -cmd suspend computer || systemctl suspend || loginctl suspend" : "systemctl suspend || loginctl suspend"]);
     }
     function logout() {
         closeAllWindows();
@@ -35,12 +35,12 @@ Singleton {
 
     function poweroff() {
         closeAllWindows();
-        Quickshell.execDetached(["bash", "-c", Config.options.ai.cortanaSession ? "cortana -cmd shutdown computer || systemctl poweroff || loginctl poweroff" : "systemctl poweroff || loginctl poweroff"]);
+        Quickshell.execDetached(["fish", "-c", Config.options.ai.cortanaSession ? "cortana -cmd shutdown computer || systemctl poweroff || loginctl poweroff" : "systemctl poweroff || loginctl poweroff"]);
     }
 
     function reboot() {
         closeAllWindows();
-        Quickshell.execDetached(["bash", "-c", Config.options.ai.cortanaSession ? "cortana -cmd reboot computer || reboot || loginctl reboot" : "reboot || loginctl reboot"]);
+        Quickshell.execDetached(["fish", "-c", Config.options.ai.cortanaSession ? "cortana -cmd reboot computer || reboot || loginctl reboot" : "reboot || loginctl reboot"]);
     }
 
     function rebootToFirmware() {

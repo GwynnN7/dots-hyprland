@@ -8,3 +8,4 @@ git clone https://github.com/GwynnN7/Cortana ~/Programming/Cortana
 #headsetcontrol -s 0
 sudo systemctl enable sddm
 fc-cache -f
+xdg-user-dirs-update

@@ -25,12 +25,9 @@ ContentPage {
 
         ConfigSwitch {
             text: Translation.tr("Use Cortana Session")
-            checked: Config.options.search.cortanaSession
+            checked: Config.options.ai.cortanaSession
             onCheckedChanged: {
-                Config.options.search.cortanaSession = checked;
-            }
-            StyledToolTip {
-                text: Translation.tr("Use Cortana Session before taking local action")
+                Config.options.ai.cortanaSession = checked;
             }
         }
     }
