@@ -3,8 +3,44 @@
 
 # shellcheck shell=bash
 
+function copy_file_s_t(){
+  local s=$1
+  local t=$2
+  if [ -f $t ];then
+    echo -e "${STY_YELLOW}[$0]: \"$t\" already exists.${STY_RST}"
+    if $firstrun;then
+      echo -e "${STY_BLUE}[$0]: It seems to be the firstrun.${STY_RST}"
+      v mv $t $t.old
+      v cp -f $s $t
+    else
+      echo -e "${STY_BLUE}[$0]: It seems not a firstrun.${STY_RST}"
+      v cp -f $s $t.new
+    fi
+  else
+    echo -e "${STY_GREEN}[$0]: \"$t\" does not exist yet.${STY_RST}"
+    v cp $s $t
+  fi
+}
+function copy_dir_s_t(){
+  local s=$1
+  local t=$2
+  if [ -d $t ];then
+    echo -e "${STY_BLUE}[$0]: \"$t\" already exists, will not do anything.${STY_RST}"
+  else
+    echo -e "${STY_YELLOW}[$0]: \"$t\" does not exist yet.${STY_RST}"
+    v rsync -av --delete $s/ $t/
+  fi
+}
+
+#####################################################################################
 # In case some dirs does not exists
 v mkdir -p $XDG_BIN_HOME $XDG_CACHE_HOME $XDG_CONFIG_HOME $XDG_DATA_HOME/icons
+firstrun_file="${XDG_CACHE_HOME}/.ii-qs-installed"
+if test -f "${firstrun_file}"; then
+  firstrun=false
+else
+  firstrun=true
+fi
 
 # `--delete' for rsync to make sure that
 # original dotfiles and new ones in the SAME DIRECTORY
@@ -55,3 +91,5 @@ esac
 
 v rsync -av "dots/.local/bin/" "$XDG_BIN_HOME"
 v cp -f "dots/.local/share/icons/illogical-impulse.svg" "${XDG_DATA_HOME}"/icons/illogical-impulse.svg
+
+v touch "${firstrun_file}"

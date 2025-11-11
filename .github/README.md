@@ -27,7 +27,6 @@
   <summary>Installation</summary>
 
    - Clone this repo and run `./setup install`
-     - See [document](https://ii.clsty.link/en/ii-qs/01setup/) for details.
 
 </details>
 
