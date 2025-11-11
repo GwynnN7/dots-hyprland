@@ -66,6 +66,12 @@ This file contains information about the dependencies, currently it describes ab
   - Basic component which is nearly a must.
 - `kitty`
   - Used in fuzzel, Hyprland, kdeglobals and Quickshell config; kitty config is also included as dots.
+- `fastfetch`
+  - Terminal customization.
+- `yazi`
+  - Terminal File Manager.
+- `fcitx5`
+  - Keyboard Layout Manager.
 - `matugen-bin`
   - Used in Quickshell.
 - `otf-space-grotesk`
@@ -99,30 +105,34 @@ This file contains information about the dependencies, currently it describes ab
   - Surely needed.
 - `hyprsunset`
   - Used in Quickshell config.
+- `hyprpolkitagent`
+  - Polkit.
 - `wl-clipboard`
   - Surely needed.
 
-## illogical-impulse-kde
-- `bluedevil`
-  - Seems not being used anywhere, maybe a part of KDE settings panel.
+## illogical-impulse-connections
+- `blueman`
+  - Bluetooth GUI configuration.
 - `gnome-keyring`
   - Provide executable `gnome-keyring-daemon`, used in Hyprland and Quickshell config.
 - `networkmanager`
   - Basic component.
-- `plasma-nm`
-  - Seems not being used anywhere, maybe a part of KDE settings panel.
-- `polkit-kde-agent`
-  - Basic component.
-- `dolphin`
-  - Used in Hyprland and Quickshell config.
-- `systemsettings`
-  - Used in Hyprland `keybinds.conf`.
+- `nm-connection-editor`
+  - Network GUI configuration.
+- `tlp`
+  - Power configuration.
+- `pacseek`
+  - Package installer helper.
+- `btop`
+  - Resource monitor.
 
 
 ## illogical-impulse-portal
 - `xdg-desktop-portal`
   - Basic component.
 - `xdg-desktop-portal-kde`
+  - Basic component.
+- `xdg-desktop-portal-gnome`
   - Basic component.
 - `xdg-desktop-portal-gtk`
   - Basic component.
@@ -144,6 +154,10 @@ This file contains information about the dependencies, currently it describes ab
   - Not explicitly used.
 - `gobject-introspection`
   - Not explicitly used.
+- `python-requests`
+  - Needed for Cortana
+- `python-pillow`
+  - Needed for Telegram Theme
 
 ## illogical-impulse-screencapture
 - `hyprshot`
@@ -177,6 +191,8 @@ This file contains information about the dependencies, currently it describes ab
 - `imagemagick`
   - Provides executable: `magick`
   - Used in Quickshell config.
+- `cpio`
+  - Needed for hyprpm.
 - `hypridle`
   - Used for loginctl to lock session.
 - `hyprlock`
@@ -187,8 +203,6 @@ This file contains information about the dependencies, currently it describes ab
   - Used in Quickshell config.
 - `translate-shell`
   - Used in Quickshell config.
-- `wlogout`
-  - Used in Hyprland config.
 
 
 # Actual packages

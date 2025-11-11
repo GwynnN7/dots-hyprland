@@ -7,7 +7,6 @@ license=(None)
 depends=(
   hyprland
   hyprsunset
-  xdg-desktop-portal-hyprland
   hyprpolkitagent
   wl-clipboard
 )

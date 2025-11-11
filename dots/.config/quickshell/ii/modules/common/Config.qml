@@ -516,15 +516,11 @@ Singleton {
                                 "type": "motionDetection"
                             },
                             {
-                                "size": 1,
+                                "size": 2,
                                 "type": "easyEffects"
                             },
                             {
                                 "size": 2,
-                                "type": "powerProfile"
-                            },
-                            {
-                                "size": 1,
                                 "type": "performanceMode"
                             }
                         ]
