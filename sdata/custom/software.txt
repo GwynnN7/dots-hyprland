@@ -8,3 +8,4 @@ steam
 jetbrains-toolbox
 sddm-conf
 code
+tlpui
