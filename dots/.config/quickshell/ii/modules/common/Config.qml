@@ -195,7 +195,7 @@ Singleton {
                     property bool vertical: false
                     property bool autoVertical: false
                     property bool enableWorkspace: true
-                    property real workspaceZoom: 1.08 // Relative to your screen, not wallpaper size
+                    property real workspaceZoom: 1.10 // Relative to your screen, not wallpaper size
                     property bool enableSidebar: true
                     property real widgetsFactor: 1.2
                 }
@@ -280,14 +280,14 @@ Singleton {
                 // 0: 󰖳  | 1: 󰌽 | 2: 󰘳 | 3:  | 4: 󰨡
                 // 5:  | 6:  | 7: 󰣇 | 8:  | 9: 
                 // 10:  | 11:  | 12:  | 13:  | 14: 󱄛
-                property string superKey: ""
+                property string superKey: "⌘"
                 property bool useMacSymbol: false
-                property bool splitButtons: false
-                property bool useMouseSymbol: false
-                property bool useFnSymbol: false
+                property bool splitButtons: true
+                property bool useMouseSymbol: true
+                property bool useFnSymbol: true
                 property JsonObject fontSize: JsonObject {
-                    property int key: Appearance.font.pixelSize.smaller
-                    property int comment: Appearance.font.pixelSize.smaller
+                    property int key: Appearance.font.pixelSize.smally
+                    property int comment: Appearance.font.pixelSize.smallie
                 }
             }
 
@@ -390,8 +390,8 @@ Singleton {
                 property bool darkenScreen: true
                 property real clickthroughOpacity: 0.8
                 property JsonObject floatingImage: JsonObject {
-                    property string imageSource: "https://cdn.discordapp.com/attachments/961693710968557598/1369635662390759434/image.gif?ex=6911cb1c&is=6910799c&hm=4450244066c0a7a6e5d2bdd195f47388eb5e7f9dd53d3931e99ad9642c638a00&"
-                    property real scale: 0.5
+                    property string imageSource: "https://www.zdnet.com/a/img/2014/10/05/16cd87c7-4c2c-11e4-b6a0-d4ae52e95e57/halocortana.png"
+                    property real scale: 0.75
                 }
             }
 
@@ -501,11 +501,11 @@ Singleton {
                             },
                             {
                                 "size": 1,
-                                "type": "idleInhibitor"
+                                "type": "mic"
                             },
                             {
                                 "size": 1,
-                                "type": "nightLight"
+                                "type": "idleInhibitor"
                             },
                             {
                                 "size": 2,
@@ -516,12 +516,16 @@ Singleton {
                                 "type": "motionDetection"
                             },
                             {
-                                "size": 2,
-                                "type": "easyEffects"
+                                "size": 1,
+                                "type": "nightLight"
                             },
                             {
                                 "size": 2,
                                 "type": "performanceMode"
+                            },
+                            {
+                                "size": 1,
+                                "type": "easyEffects"
                             }
                         ]
                     }
@@ -564,7 +568,7 @@ Singleton {
             }
             
             property JsonObject wallpaperSelector: JsonObject {
-                property bool useSystemFileDialog: false
+                property bool useSystemFileDialog: true
             }
             
             property JsonObject windows: JsonObject {

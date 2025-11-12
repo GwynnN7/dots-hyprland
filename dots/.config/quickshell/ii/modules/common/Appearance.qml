@@ -242,6 +242,7 @@ Singleton {
             property int smallest: 10
             property int smaller: 12
             property int smallie: 13
+            property int smally: 14
             property int small: 15
             property int normal: 16
             property int large: 17

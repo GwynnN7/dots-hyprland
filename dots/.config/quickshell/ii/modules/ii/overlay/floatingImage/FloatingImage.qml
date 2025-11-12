@@ -9,7 +9,7 @@ import qs.modules.ii.overlay
 StyledOverlayWidget {
     id: root
     showClickabilityButton: false
-    resizable: false
+    resizable: true
     clickthrough: true
 
     property string imageSource: Config.options.overlay.floatingImage.imageSource
