@@ -35,8 +35,7 @@ function copy_dir_s_t(){
 #####################################################################################
 # In case some dirs does not exists
 v mkdir -p $XDG_BIN_HOME $XDG_CACHE_HOME $XDG_CONFIG_HOME $XDG_DATA_HOME/icons
-firstrun_file="${XDG_CACHE_HOME}/.ii-qs-installed"
-if test -f "${firstrun_file}"; then
+if test -f "${FIRSTRUN_FILE}"; then
   firstrun=false
 else
   firstrun=true
@@ -92,4 +91,4 @@ esac
 v rsync -av "dots/.local/bin/" "$XDG_BIN_HOME"
 v cp -f "dots/.local/share/icons/illogical-impulse.svg" "${XDG_DATA_HOME}"/icons/illogical-impulse.svg
 
-v touch "${firstrun_file}"
+v touch "${FIRSTRUN_FILE}"
